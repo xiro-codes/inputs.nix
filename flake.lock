@@ -253,11 +253,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1773008832,
-        "narHash": "sha256-ZNo/JmcLDN2AB/snSfgCMGvrPKJV2hFJA/APVkWGlD4=",
+        "lastModified": 1773022453,
+        "narHash": "sha256-T4Av7GgimShz+j1186qLjEhRM4omxdBlklHsSQByUGY=",
         "owner": "xiro-codes",
         "repo": "gog.nix",
-        "rev": "ff8e1aac232b655976d5c8748a42e11db95a0eba",
+        "rev": "3aae9e0da5973477e2016974f9f3e4714c859dd3",
         "type": "github"
       },
       "original": {
