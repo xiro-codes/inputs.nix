@@ -2,18 +2,18 @@
   description = "Central dependecy flake for dotfiles.nix";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     # rocket-blog.url = "github:xiro-codes/rocket-blog";
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
 
     stylix = {
-      url = "github:danth/stylix/release-25.11";
+      url = "github:danth/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -33,7 +33,7 @@
     };
 
     nixvim = {
-      url = "github:nix-community/nixvim/nixos-25.11";
+      url = "github:nix-community/nixvim";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
