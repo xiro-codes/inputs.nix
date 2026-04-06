@@ -5,7 +5,7 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    # rocket-blog.url = "github:xiro-codes/rocket-blog";
+    rocket-blog.url = "github:xiro-codes/rocket_blog";
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,7 +56,7 @@
             inputs.home-manager.nixosModules.home-manager
             inputs.nix-flatpak.nixosModules.nix-flatpak
             inputs.gog-nix.nixosModules.gog
-            # inputs.rocket-blog.nixosModules.default
+            inputs.rocket-blog.nixosModules.default
           ];
         };
         homeModules.default = {
