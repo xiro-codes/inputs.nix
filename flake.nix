@@ -6,12 +6,19 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     rocket-blog.url = "github:xiro-codes/rocket_blog";
+    silentsddm = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     stylix = {
       url = "github:danth/stylix/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,6 +64,7 @@
             inputs.nix-flatpak.nixosModules.nix-flatpak
             inputs.gog-nix.nixosModules.gog
             inputs.rocket-blog.nixosModules.default
+            inputs.silentsddm.nixosModules.default
           ];
         };
         homeModules.default = {
