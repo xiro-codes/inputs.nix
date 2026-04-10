@@ -456,11 +456,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1775861299,
-        "narHash": "sha256-BWV352R5MKvMlRboy7gX6zW9Py7SdEqYDQCMBwMqckg=",
+        "lastModified": 1775863148,
+        "narHash": "sha256-i3f5ZmgIP9L4t3NtSXm1az2GarblaCmtrl6NDYot/qs=",
         "owner": "xiro-codes",
         "repo": "rocket_blog",
-        "rev": "5641b49e1b7b9a3617d9b530c2b277b491652c69",
+        "rev": "ba327eee392d2c8d84b78ec6bd0f37cf99282a5a",
         "type": "github"
       },
       "original": {
