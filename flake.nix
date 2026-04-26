@@ -10,6 +10,10 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    matugen = {
+      url = "github:InioX/Matugen";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     matshell = {
       url = "github:Neurarian/matshell";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -69,6 +73,7 @@
             inputs.gog-nix.nixosModules.gog
             inputs.rocket-blog.nixosModules.default
             inputs.silentsddm.nixosModules.default
+            inputs.matugen.nixosModules.default
           ];
         };
         homeModules.default = {
