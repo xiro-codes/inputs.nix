@@ -10,6 +10,10 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    matshell = {
+      url = "github:Neurarian/matshell";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -73,6 +77,7 @@
             inputs.caelestia-shell.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
             inputs.stylix.homeModules.stylix
+            inputs.matshell.homeManagerModules.default
           ];
         };
       };
