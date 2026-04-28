@@ -10,14 +10,6 @@
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    matugen = {
-      url = "github:InioX/Matugen";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    matshell = {
-      url = "github:Neurarian/matshell";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
     home-manager = {
       url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -74,6 +66,7 @@
             inputs.rocket-blog.nixosModules.default
             inputs.silentsddm.nixosModules.default
             inputs.matugen.nixosModules.default
+            inputs.matshell.nixosModules.default
           ];
         };
         homeModules.default = {
@@ -82,6 +75,7 @@
             inputs.caelestia-shell.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
             inputs.stylix.homeModules.stylix
+            inputs.matugen.nixosModules.default
             inputs.matshell.homeManagerModules.default
           ];
         };
