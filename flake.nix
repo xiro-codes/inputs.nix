@@ -65,8 +65,6 @@
             inputs.gog-nix.nixosModules.gog
             inputs.rocket-blog.nixosModules.default
             inputs.silentsddm.nixosModules.default
-            inputs.matugen.nixosModules.default
-            inputs.matshell.nixosModules.default
           ];
         };
         homeModules.default = {
@@ -75,9 +73,13 @@
             inputs.caelestia-shell.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
             inputs.stylix.homeModules.stylix
-            inputs.matugen.nixosModules.default
-            inputs.matshell.homeManagerModules.default
           ];
+        };
+      };
+
+      perSystem = { pkgs, ... }: {
+        devShells.default = pkgs.mkShell {
+          packages = [ pkgs.just ];
         };
       };
     };
