@@ -6,6 +6,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     rocket-blog.url = "github:xiro-codes/rocket_blog";
+    nvim-nix.url = "github:xiro-codes/nvim.nix";
     silentsddm = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -77,10 +78,12 @@
         };
       };
 
-      perSystem = { pkgs, ... }: {
+      perSystem = { pkgs, system, ... }: {
+        packages = inputs.nvim-nix.packages.${system};
         devShells.default = pkgs.mkShell {
           packages = [ pkgs.just ];
         };
+        
       };
     };
 }
