@@ -36,7 +36,7 @@
     };
 
     caelestia-shell = {
-      url = "github:caelestia-dots/shell";
+      url = "github:caelestia-dots/shell/v1.6.2";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -51,7 +51,8 @@
     };
   };
 
-  outputs = inputs@ { self, flake-parts, ... }:
+  outputs =
+    inputs@{ self, flake-parts, ... }:
     flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [ "x86_64-linux" ];
 
@@ -78,12 +79,14 @@
         };
       };
 
-      perSystem = { pkgs, system, ... }: {
-        packages = inputs.nvim-nix.packages.${system};
-        devShells.default = pkgs.mkShell {
-          packages = [ pkgs.just ];
+      perSystem =
+        { pkgs, system, ... }:
+        {
+          packages = inputs.nvim-nix.packages.${system};
+          devShells.default = pkgs.mkShell {
+            packages = [ pkgs.just ];
+          };
+
         };
-        
-      };
     };
 }

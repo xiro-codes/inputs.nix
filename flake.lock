@@ -110,6 +110,7 @@
       },
       "original": {
         "owner": "caelestia-dots",
+        "ref": "v1.6.2",
         "repo": "shell",
         "type": "github"
       }
