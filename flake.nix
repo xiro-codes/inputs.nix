@@ -7,6 +7,7 @@
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     rocket-blog.url = "github:xiro-codes/rocket_blog";
     nvim-nix.url = "github:xiro-codes/nvim.nix";
+    harmonia.url = "github:nix-community/harmonia";
     silentsddm = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -49,6 +50,12 @@
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    deploy-rs.url = "github:serokell/deploy-rs";
+    nix-topology.url = "github:oddlama/nix-topology";
+    determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
+    flake-schemas.url = "https://flakehub.com/f/DeterminateSystems/flake-schemas/*";
+    millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
   };
 
   outputs =
@@ -58,6 +65,8 @@
 
       flake = {
         inherit inputs;
+        discovery = import ./discovery;
+        schemas = import ./schemas.nix;
         nixosModules.default = {
           imports = [
             inputs.disko.nixosModules.disko
@@ -67,6 +76,7 @@
             inputs.gog-nix.nixosModules.gog
             inputs.rocket-blog.nixosModules.default
             inputs.silentsddm.nixosModules.default
+            inputs.harmonia.nixosModules.harmonia
           ];
         };
         homeModules.default = {
