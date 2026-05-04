@@ -2,6 +2,7 @@
   config,
   lib,
   pkgs,
+  self,
   ...
 }:
 let
@@ -21,7 +22,7 @@ in
     enable = mkEnableOption "sops-nix secret management";
     sopsFile = mkOption {
       type = types.path;
-      default = ../../../secrets/secrets.yaml;
+      default = "${self}/secrets/secrets.yaml";
       example = literalExpression "../secrets/system-secrets.yaml";
       description = "Path to the encrypted YAML file containing system secrets";
     };
