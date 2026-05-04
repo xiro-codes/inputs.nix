@@ -76,7 +76,8 @@ in
     nixosContainers = nixosLib.containers;
     homeConfigurations = homeLib.mkHomeConfigurations;
     templates = discoveredTemplates;
-    #overlays.default = final: prev: packagesLib.mkPackages paths.packages final.stdenv.hostPlatform.system;
+    overlays.default =
+      final: prev: packagesLib.mkPackages paths.packages final.stdenv.hostPlatform.system;
     deploy.nodes = deployLib.mkDeployNodes;
   };
 }
