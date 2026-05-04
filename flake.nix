@@ -66,9 +66,17 @@
       flake = {
         inherit inputs;
         discovery = import ./discovery;
-        schemas = import ./schemas.nix;
+        schemaBuilder = import ./schemas.nix;
         nixosModules.default = {
           imports = [
+            ./modules/system/bootloader
+            ./modules/system/disks
+            ./modules/system/network
+            ./modules/system/nix-core-settings
+            ./modules/system/secrets
+            ./modules/system/security
+            ./modules/system/user-manager
+            ./modules/system/localization
             inputs.disko.nixosModules.disko
             inputs.sops-nix.nixosModules.sops
             inputs.home-manager.nixosModules.home-manager
