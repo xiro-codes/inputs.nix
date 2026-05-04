@@ -35,7 +35,7 @@ in
             hostname = deployConfig.hostname;
             profiles.system = {
               user = deployConfig.user or "root";
-              path = inputs.deploy-rs.lib.x86_64-linux.activate.nixos inputs.self.nixosConfigurations.${name};
+              path = inputs.inputs-nix.inputs.deploy-rs.lib.x86_64-linux.activate.nixos inputs.self.nixosConfigurations.${name};
             };
           };
         }

@@ -29,7 +29,11 @@ in
         name = "${entry.user}@${entry.host}";
         value = inputs.inputs-nix.inputs.home-manager.lib.homeManagerConfiguration {
           pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
-          extraSpecialArgs = { inherit inputs; };
+          extraSpecialArgs = { 
+            self = inputs.self;
+            inputs = inputs.inputs-nix.inputs;
+            inputs-nix = inputs.inputs-nix;
+          };
           modules = [
             (paths.home + "/${entry.filename}")
             {

@@ -16,7 +16,9 @@ in
       map (name: {
         inherit name;
         value = inputs.nixpkgs.legacyPackages.${system}.callPackage (path + "/${name}/default.nix") {
-          inherit inputs;
+          self = inputs.self;
+          inputs = inputs.inputs-nix.inputs;
+          inputs-nix = inputs.inputs-nix;
         };
       }) names
     );

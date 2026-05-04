@@ -31,7 +31,9 @@ let
         name = host.name;
         value = inputs.nixpkgs.lib.nixosSystem {
           specialArgs = {
-            inherit inputs;
+            self = inputs.self;
+            inputs = inputs.inputs-nix.inputs;
+            inputs-nix = inputs.inputs-nix;
             currentHostName = host.name;
             currentHostUsers = map (u: u.user) (hostToUsersMap.${host.name} or [ ]);
           };
@@ -45,7 +47,11 @@ let
                 home-manager = {
                   backupFileExtension = "backup";
                   backupCommand = "${inputs.nixpkgs.legacyPackages.x86_64-linux.trash-cli}/bin/trash";
-                  extraSpecialArgs = { inherit inputs; };
+                  extraSpecialArgs = { 
+                    self = inputs.self;
+                    inputs = inputs.inputs-nix.inputs;
+                    inputs-nix = inputs.inputs-nix;
+                  };
                   sharedModules = (attrValues discoveredHomeModules) ++ globalHomeModules ++ [ ];
                   users = listToAttrs (
                     map (u: {
