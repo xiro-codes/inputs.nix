@@ -1,7 +1,7 @@
 base: {
   systems = base + "/systems";
   systemModules = base + "/modules/system";
-  home = base + "/home";
+  home = base + "/homes";
   homeModules = base + "/modules/home";
   packages = base + "/packages";
   templates = base + "/templates";
