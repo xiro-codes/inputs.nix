@@ -100,6 +100,7 @@
       perSystem =
         { pkgs, system, ... }:
         {
+          formatter = pkgs.nixfmt;
           packages = inputs.nvim-nix.packages.${system};
           devShells.default = pkgs.mkShell {
             packages = [ pkgs.just ];
