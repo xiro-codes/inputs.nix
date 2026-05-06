@@ -8,6 +8,10 @@
     rocket-blog.url = "github:xiro-codes/rocket_blog";
     nvim-nix.url = "github:xiro-codes/nvim.nix";
     harmonia.url = "github:nix-community/harmonia";
+    fuchsia-nix = {
+      url = "github:xiro-codes/fuchsia.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     silentsddm = {
       url = "github:uiriansan/SilentSDDM";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -89,6 +93,7 @@
         };
         homeModules.default = {
           imports = [
+            inputs.fuchsia-nix.homeModules.default
             inputs.sops-nix.homeModules.sops
             inputs.caelestia-shell.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
