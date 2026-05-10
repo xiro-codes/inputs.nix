@@ -635,11 +635,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1777768045,
-        "narHash": "sha256-Qs8vGQNhCOgN2EeQ/d7hc1GMJKJiBgJVUaxtvMeypRU=",
+        "lastModified": 1778372940,
+        "narHash": "sha256-92uddWVJXap19AO6rcuMiNA41Su0S44fwfY/k48K3xo=",
         "owner": "xiro-codes",
         "repo": "gog.nix",
-        "rev": "da9dae2be9ab6af02b1c3b89e69106a0529ed8cd",
+        "rev": "9fc5bacd846921daf434e72b3d4fdc3dae62a556",
         "type": "github"
       },
       "original": {
@@ -770,11 +770,11 @@
       },
       "locked": {
         "dir": "packages/nix",
-        "lastModified": 1778350203,
-        "narHash": "sha256-WxvERW1lbN2hnb/EuM4aoGh0fJUUiTYT/j8WbFPNa5w=",
+        "lastModified": 1778378608,
+        "narHash": "sha256-01sOhkWVy0HjFWWhU7MGcEk22KPSJEi/Sdl2+3Y5nDU=",
         "owner": "SteamClientHomebrew",
         "repo": "Millennium",
-        "rev": "fa9d1ac5bd11fb22f5a5f696f15eff82a08049ee",
+        "rev": "c1493c4450f4792bb217ea70ea0fde8c06d40bc2",
         "type": "github"
       },
       "original": {
@@ -880,11 +880,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1777808420,
-        "narHash": "sha256-hh9XBz0K1ypZ+neezgIPCSsnWFKEq8VfV/1aUSPu3OA=",
+        "lastModified": 1778407980,
+        "narHash": "sha256-r980BhsReZQe6FkmyNZkwCZpvzARo5jZgTl8HxjAssY=",
         "owner": "oddlama",
         "repo": "nix-topology",
-        "rev": "28e9dc901ff38a8fa2d24bccd5f89511d6d8324e",
+        "rev": "ca0a602f650306d00d6f3e3c76d0f4c48a5c5adc",
         "type": "github"
       },
       "original": {
