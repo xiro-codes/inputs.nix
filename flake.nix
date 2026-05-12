@@ -60,6 +60,13 @@
     determinate.url = "https://flakehub.com/f/DeterminateSystems/determinate/*";
     flake-schemas.url = "https://flakehub.com/f/DeterminateSystems/flake-schemas/*";
     millennium.url = "github:SteamClientHomebrew/Millennium?dir=packages/nix";
+
+    jovian = {
+      url = "github:Jovian-Experiments/Jovian-NixOS";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    impermanence.url = "github:nix-community/impermanence";
   };
 
   outputs =
