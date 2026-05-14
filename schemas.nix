@@ -5,7 +5,7 @@ let
 in
 {
   flake = {
-    schemas = inputs.inputs-nix.inputs.flake-schemas.schemas // {
+    schemas = builtins.removeAttrs inputs.inputs-nix.inputs.flake-schemas.schemas [ "templates" ] // {
       nixosModules = inputs.inputs-nix.inputs.flake-schemas.schemas.nixosModules // {
         inventory = output: {
           children = builtins.mapAttrs (name: value: {

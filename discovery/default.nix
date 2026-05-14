@@ -9,7 +9,7 @@
 }:
 let
   # Import paths configuration
-  paths = import ./paths.nix inputs.self.outPath;
+  paths = import ./paths.nix inputs.self;
 
   # Import utility modules
   fs = import ./fs.nix { inherit lib; };
