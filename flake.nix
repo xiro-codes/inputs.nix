@@ -66,7 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    impermanence.url = "github:nix-community/impermanence";
+    preservation.url = "github:nix-community/preservation";
   };
 
   outputs =
@@ -96,6 +96,8 @@
             inputs.rocket-blog.nixosModules.default
             inputs.silentsddm.nixosModules.default
             inputs.harmonia.nixosModules.harmonia
+            inputs.preservation.nixosModules.default
+            inputs.determinate.nixosModules.default
           ];
         };
         homeModules.default = {
