@@ -66,7 +66,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    preservation.url = "github:nix-community/preservation";
+    impermanence.url = "github:nix-community/impermanence";
   };
 
   outputs =
@@ -96,7 +96,7 @@
             inputs.rocket-blog.nixosModules.default
             inputs.silentsddm.nixosModules.default
             inputs.harmonia.nixosModules.harmonia
-            inputs.preservation.nixosModules.default
+            inputs.impermanence.nixosModules.impermanence
             inputs.determinate.nixosModules.default
           ];
         };
@@ -107,6 +107,7 @@
             inputs.caelestia-shell.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
             inputs.stylix.homeModules.stylix
+            inputs.impermanence.homeManagerModules.impermanence
           ];
         };
       };
