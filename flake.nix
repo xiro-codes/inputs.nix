@@ -107,7 +107,6 @@
             inputs.caelestia-shell.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
             inputs.stylix.homeModules.stylix
-            inputs.impermanence.homeManagerModules.impermanence
           ];
         };
       };
