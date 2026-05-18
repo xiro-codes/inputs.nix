@@ -1,6 +1,12 @@
 { fs }:
 let
-  inherit (builtins) listToAttrs map;
+  inherit (builtins)
+    listToAttrs
+    map
+    concatLists
+    pathExists
+    filter
+    ;
   metaLib = import ./meta.nix { };
 in
 {
@@ -8,12 +14,33 @@ in
   mkModules =
     path:
     let
-      names = fs.getValidSubdirs path;
-    in
-    listToAttrs (
-      map (name: {
+      # Directories that contain a default.nix (top-level modules)
+      topLevelNames = fs.getValidSubdirs path;
+
+      # All directories in the path
+      allDirs = fs.getDirs path;
+
+      # Hubs are directories that are NOT modules themselves (no default.nix)
+      hubs = filter (d: !(pathExists (path + "/${d}/default.nix"))) allDirs;
+
+      # Modules inside hubs (1 level deep)
+      hubModules = concatLists (
+        map (hub:
+          let
+            hubPath = path + "/${hub}";
+            hubSubdirs = fs.getValidSubdirs hubPath;
+          in
+          map (name: {
+            inherit name;
+            value = hubPath + "/${name}";
+          }) hubSubdirs
+        ) hubs
+      );
+
+      topLevelModules = map (name: {
         inherit name;
         value = path + "/${name}";
-      }) names
-    );
+      }) topLevelNames;
+    in
+    listToAttrs (topLevelModules ++ hubModules);
 }
