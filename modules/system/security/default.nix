@@ -59,14 +59,14 @@ in
       config.sops.secrets."ssh_pub_ruby/master".path
       config.sops.secrets."ssh_pub_sapphire/master".path
       config.sops.secrets."ssh_pub_onix/master".path
-      config.sops.secrets."ssh_pub_jade/master".path
+      config.sops.secrets."ssh_pub_slate/master".path
     ];
 
     users.users.${cfg.adminUser}.openssh.authorizedKeys.keyFiles = [
       config.sops.secrets."ssh_pub_ruby/master".path
       config.sops.secrets."ssh_pub_sapphire/master".path
       config.sops.secrets."ssh_pub_onix/master".path
-      config.sops.secrets."ssh_pub_jade/master".path
+      config.sops.secrets."ssh_pub_slate/master".path
     ];
 
     # Nix Daemon trust (Crucial for remote deployments)
