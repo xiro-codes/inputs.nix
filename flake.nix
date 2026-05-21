@@ -98,6 +98,7 @@
             inputs.harmonia.nixosModules.harmonia
             inputs.impermanence.nixosModules.impermanence
             inputs.determinate.nixosModules.default
+            inputs.nix-topology.nixosModules.default
           ];
         };
         homeModules.default = {
