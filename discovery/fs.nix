@@ -22,13 +22,19 @@ let
 
   # Get directories that contain all specified files and aren't broken
   getDirsWith = path: requiredFiles:
+    let
+      # Use our native builtin if available
+      dirs = if builtins ? getDirsWithCached
+             then builtins.getDirsWithCached path requiredFiles
+             else filter (name:
+               let dir = path + "/${name}";
+               in all (f: pathExists (dir + "/${f}")) requiredFiles
+             ) (getDirs path);
+    in
     filter (name:
-      let 
-        dir = path + "/${name}";
-        hasFiles = all (f: pathExists (dir + "/${f}")) requiredFiles;
-      in
-      hasFiles && !(metaLib.isBroken (dir + "/meta.nix"))
-    ) (getDirs path);
+      let dir = path + "/${name}";
+      in !(metaLib.isBroken (dir + "/meta.nix"))
+    ) dirs;
 in
 {
   inherit getDirs getDirsWith;
