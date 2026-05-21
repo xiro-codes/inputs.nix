@@ -44,25 +44,8 @@ let
               {
                 networking.hostName = host.name;
                 local.secrets.enable = true;
-                home-manager = {
-                  backupFileExtension = "backup";
-                  backupCommand = "${inputs.nixpkgs.legacyPackages.x86_64-linux.trash-cli}/bin/trash";
-                  extraSpecialArgs = { 
-                    self = inputs.self;
-                    inputs = inputs.inputs-nix.inputs;
-                    inputs-nix = inputs.inputs-nix;
-                  };
-                  sharedModules = (attrValues discoveredHomeModules) ++ globalHomeModules ++ [ ];
-                  users = listToAttrs (
-                    map (u: {
-                      name = u.user;
-                      value = import (paths.home + "/${u.filename}");
-                    }) (hostToUsersMap.${host.name} or [ ])
-                  );
-                };
               }
-            ]
-            ++ (attrValues discoveredSystemModules);
+            ];
         };
       }) hosts
     );

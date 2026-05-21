@@ -16,6 +16,7 @@ in
 
   config = mkIf cfg.enable {
     # Nix configuration
+    determinate.enable = true;
     nix.settings = {
       accept-flake-config = true;
       experimental-features = [

@@ -39,7 +39,6 @@ in
             {
               home.username = entry.user;
               home.homeDirectory = "/home/${entry.user}";
-              nix.package = inputs.nixpkgs.legacyPackages.x86_64-linux.nix;
             }
           ]
           ++ (attrValues discoveredHomeModules)
