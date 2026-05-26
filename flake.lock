@@ -848,11 +848,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1779812341,
-        "narHash": "sha256-MafdIjrncuanY5WIqkXuGj4y/vzBnWPgmh9hoMhvQds=",
+        "lastModified": 1779814700,
+        "narHash": "sha256-Z28IWFj9aB/RR61s84QjxguNpQrzXedtTB1jou7Bojs=",
         "owner": "xiro-codes",
         "repo": "nix-compose",
-        "rev": "e48d96a86ec9b671c666327699a06144a09f4bf9",
+        "rev": "2dbaef67ea4fd93927c849d3859de47aa73305e1",
         "type": "github"
       },
       "original": {
