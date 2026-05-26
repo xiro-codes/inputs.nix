@@ -67,6 +67,10 @@
     };
 
     impermanence.url = "github:nix-community/impermanence";
+    nix-compose = {
+      url = "github:xiro-codes/nix-compose";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs =
@@ -99,6 +103,7 @@
             inputs.impermanence.nixosModules.impermanence
             inputs.determinate.nixosModules.default
             inputs.nix-topology.nixosModules.default
+            inputs.nix-compose.nixosModules.daemon
           ];
         };
         homeModules.default = {
