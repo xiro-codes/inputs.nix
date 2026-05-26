@@ -2,7 +2,7 @@
   description = "Central dependecy flake for dotfiles.nix";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
     rocket-blog.url = "github:xiro-codes/rocket_blog";
@@ -41,7 +41,7 @@
     };
 
     caelestia-shell = {
-      url = "github:caelestia-dots/shell/v1.5.2";
+      url = "github:caelestia-dots/shell";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -107,7 +107,7 @@
             inputs.sops-nix.homeModules.sops
             inputs.caelestia-shell.homeManagerModules.default
             inputs.nixvim.homeModules.nixvim
-            inputs.stylix.homeModules.stylix
+            #inputs.stylix.homeModules.stylix
           ];
         };
       };
