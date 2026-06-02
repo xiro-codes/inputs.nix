@@ -27,27 +27,23 @@ in
   config = mkIf cfg.enable {
     networking = {
       hosts = {
-        "192.168.1.65" = [
-          "yt.onix.home"
-          "dashboard.onix.home"
-          "files.onix.home"
-          "wallpapers.onix.home"
-          "games.onix.home"
-          "git.onix.home"
-          "tv.onix.home"
-          "plex.onix.home"
-          "onix.home"
-          "ch7.onix.home"
-          "comics.onix.home"
-          "audiobooks.onix.home"
-          "dl.onix.home"
-          "pihole.onix.home"
-          "docs.onix.home"
-          "cache.onix.home"
-        ];
         "192.168.1.67" = [
-          "ai.sapphire.home"
-          "ui.sapphire.home"
+          "yt.sapphire.home"
+          "dashboard.sapphire.home"
+          "files.sapphire.home"
+          "wallpapers.sapphire.home"
+          "games.sapphire.home"
+          "git.sapphire.home"
+          "tv.sapphire.home"
+          "plex.sapphire.home"
+          "sapphire.home"
+          "ch7.sapphire.home"
+          "comics.sapphire.home"
+          "audiobooks.sapphire.home"
+          "dl.sapphire.home"
+          "pihole.sapphire.home"
+          "docs.sapphire.home"
+          "cache.sapphire.home"
         ];
       };
       # Disable the old wpa_supplicant
