@@ -5,9 +5,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-26.05";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nix-flatpak.url = "github:gmodena/nix-flatpak";
-    rocket-blog.url = "github:xiro-codes/rocket_blog";
     nvim-nix.url = "github:xiro-codes/nvim.nix";
     harmonia.url = "github:nix-community/harmonia";
+    caelestia-live.url = "github:xiro-codes/caelestia-live/v0.1.0_final";
     fuchsia-nix = {
       url = "github:xiro-codes/fuchsia.nix";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -20,10 +20,10 @@
       url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     zen-browser = {
-      url = "github:youwen5/zen-browser-flake";
+      url = "github:0xc000022070/zen-browser-flake/beta";
       inputs.nixpkgs.follows = "nixpkgs";
+      inputs.home-manager.follows = "home-manager";
     };
     stylix = {
       url = "github:danth/stylix/release-26.05";
@@ -80,18 +80,9 @@
 
       flake = {
         inherit inputs;
-        discovery = import ./discovery;
         schemaBuilder = import ./schemas.nix;
         nixosModules.default = {
           imports = [
-            ./modules/system/bootloader
-            ./modules/system/disks
-            ./modules/system/network
-            ./modules/system/nix-core-settings
-            ./modules/system/secrets
-            ./modules/system/security
-            ./modules/system/user-manager
-            ./modules/system/localization
             inputs.disko.nixosModules.disko
             inputs.sops-nix.nixosModules.sops
             inputs.home-manager.nixosModules.home-manager
@@ -121,7 +112,9 @@
         { pkgs, system, ... }:
         {
           formatter = pkgs.nixfmt;
-          packages = inputs.nvim-nix.packages.${system};
+          packages = 
+            inputs.nvim-nix.packages.${system} // 
+            { caelestia-live = inputs.caelestia-live.packages.${system}.default;};
           devShells.default = pkgs.mkShell {
             packages = [ pkgs.just ];
           };
